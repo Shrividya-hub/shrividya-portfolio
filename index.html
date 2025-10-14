@@ -1,80 +1,614 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Shrividya S | Portfolio</title>
-  <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Shrividya S | Professional Portfolio</title>
+  <!-- FontAwesome for icons -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+  />
+  <!-- Google Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap"
+    rel="stylesheet"
+  />
+  <style>
+    /* Global Styles */
+    * {
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+    body {
+      font-family: 'Montserrat', sans-serif;
+      margin: 0;
+      background: #f4f6fa;
+      color: #222;
+      line-height: 1.6;
+    }
+    a {
+      color: #23c686;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    section {
+      max-width: 1000px;
+      margin: 50px auto;
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      padding: 40px 30px;
+    }
+    h1,
+    h2,
+    h3 {
+      font-weight: 700;
+      margin-top: 0;
+      margin-bottom: 15px;
+      color: #1a2d5f;
+    }
+    h2 {
+      border-left: 6px solid #23c686;
+      padding-left: 12px;
+      margin-bottom: 28px;
+    }
+    p {
+      margin-bottom: 15px;
+    }
+
+    /* Header */
+    header {
+      background: linear-gradient(
+        120deg,
+        #225beb 40%,
+        #23c686 100%
+      );
+      color: white;
+      text-align: center;
+      padding: 65px 25px 45px;
+      position: relative;
+    }
+    header img.profile-pic {
+      border-radius: 50%;
+      width: 140px;
+      height: 140px;
+      object-fit: cover;
+      border: 4px solid white;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+      margin-bottom: 15px;
+    }
+    header h1 {
+      font-size: 2.8rem;
+      margin-bottom: 6px;
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+    }
+    header p.subtitle {
+      font-size: 1.2rem;
+      font-weight: 500;
+      margin-top: 0;
+      text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+    }
+    nav.main-nav {
+      display: flex;
+      justify-content: center;
+      gap: 28px;
+      margin-top: 30px;
+      font-weight: 600;
+    }
+    nav.main-nav a {
+      color: white;
+      font-size: 1.1rem;
+      transition: color 0.3s ease;
+      padding-bottom: 7px;
+      border-bottom: 2px solid transparent;
+    }
+    nav.main-nav a:hover,
+    nav.main-nav a.active {
+      color: #e0ffe3;
+      border-color: #e0ffe3;
+    }
+    /* Contact icons */
+    .contact-icons {
+      margin-top: 30px;
+    }
+    .contact-icons a {
+      color: white;
+      font-size: 28px;
+      margin: 0 15px;
+      transition: color 0.3s ease;
+    }
+    .contact-icons a:hover {
+      color: #a5f3d8;
+    }
+
+    /* Skills badges */
+    .skills .badge {
+      display: inline-block;
+      background: #23c686;
+      color: white;
+      padding: 7px 15px;
+      border-radius: 20px;
+      font-weight: 600;
+      font-size: 0.9rem;
+      margin: 6px 10px 6px 0;
+      box-shadow: 0 3px 6px rgb(0 0 0 / 0.15);
+      transition: background 0.3s ease;
+    }
+    .skills .badge:hover {
+      background: #1ea067;
+      cursor: default;
+    }
+
+    /* Projects */
+    .projects {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 32px;
+      justify-content: center;
+    }
+    .project-card {
+      background: #f9fbff;
+      border-radius: 12px;
+      width: 460px;
+      box-shadow: 0 6px 15px rgb(0 0 0 / 0.07);
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.3s ease;
+      cursor: default;
+    }
+    .project-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 10px 22px rgb(0 0 0 / 0.18);
+    }
+    .project-card img {
+      border-radius: 12px 12px 0 0;
+      object-fit: cover;
+      height: 180px;
+      width: 100%;
+      filter: drop-shadow(0 1.5px 1.5px rgba(0,0,0,0.08));
+    }
+    .project-content {
+      padding: 20px 25px;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+    }
+    .project-content h3 {
+      margin-bottom: 8px;
+      color: #225beb;
+      font-size: 1.25rem;
+    }
+    .project-content .badge {
+      background: #225beb;
+      margin-bottom: 14px;
+      font-size: 0.85rem;
+      color: #e0e9ff;
+      cursor: initial;
+      padding: 5px 12px;
+    }
+    .project-content p {
+      flex-grow: 1;
+      font-size: 0.95rem;
+      color: #2f2f2f;
+    }
+    .project-content a {
+      font-weight: 600;
+      text-align: right;
+      margin-top: 15px;
+      color: #23c686;
+      font-size: 0.9rem;
+      display: inline-block;
+    }
+    .project-content a:hover {
+      text-decoration: underline;
+    }
+
+    /* Achievements section with background */
+    #achievements {
+      background: url('https://user-gen-media-assets.s3.amazonaws.com/seedream_images/6023e098-c5c0-4544-9a22-4daf3a4ba27a.png') no-repeat center/cover;
+      color: white;
+      box-shadow: inset 0 0 0 1000px rgb(0 0 0 / 0.5);
+    }
+    #achievements ul {
+      list-style: none;
+      padding-left: 20px;
+      font-size: 1.1rem;
+      line-height: 1.7;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    #achievements li {
+      padding: 11px 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+    #achievements i {
+      color: #23c686;
+      font-size: 1.4rem;
+      min-width: 30px;
+    }
+
+    /* Certificates */
+    .certificates ul {
+      list-style: none;
+      padding-left: 0;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    .certificates li {
+      padding: 12px 0;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 1.05rem;
+      color: #1a2d5f;
+    }
+    .certificates li i {
+      font-size: 1.4rem;
+      color: #f9b13e;
+      min-width: 30px;
+    }
+
+    /* Testimonials */
+    #testimonials {
+      background: #23c686;
+      color: white;
+      padding: 50px 30px;
+      border-radius: 12px;
+      max-width: 900px;
+      margin: 50px auto;
+      box-shadow: 0 4px 20px rgb(0 0 0 / 0.15);
+    }
+    #testimonials h2 {
+      border-color: white;
+      margin-bottom: 40px;
+      color: #fff;
+    }
+    .testimonial {
+      font-style: italic;
+      margin-bottom: 25px;
+      position: relative;
+      padding-left: 35px;
+      font-size: 1.15rem;
+    }
+    .testimonial::before {
+      content: '\201C';
+      font-size: 3rem;
+      position: absolute;
+      left: 0;
+      top: -10px;
+      color: #a7f1d5;
+      font-weight: 700;
+      line-height: 1;
+    }
+    .testimonial-footer {
+      font-weight: 700;
+      font-size: 1rem;
+      text-align: right;
+      margin-top: 8px;
+    }
+
+    /* Blog preview section */
+    #blog-preview {
+      max-width: 900px;
+      margin: 50px auto 70px;
+    }
+    #blog-preview h2 {
+      border-color: #225beb;
+      margin-bottom: 30px;
+      color: #225beb;
+    }
+    .blog-post {
+      background: #f9fbff;
+      padding: 20px 25px;
+      border-radius: 12px;
+      box-shadow: 0 3px 15px rgb(0 0 0 / 0.07);
+      margin-bottom: 25px;
+      transition: box-shadow 0.3s ease;
+    }
+    .blog-post:hover {
+      box-shadow: 0 7px 26px rgb(0 0 0 / 0.12);
+    }
+    .blog-post h3 {
+      margin-top: 0;
+      color: #225beb;
+      font-size: 1.3rem;
+    }
+    .blog-post p {
+      color: #444;
+      font-size: 1rem;
+    }
+
+    /* Contact Section */
+    #contact {
+      text-align: center;
+    }
+    #contact p {
+      font-size: 1.1rem;
+    }
+    #contact a {
+      font-weight: 700;
+      font-size: 1.3rem;
+      margin: 0 13px;
+      color: #23c686;
+      display: inline-block;
+      transition: color 0.3s ease;
+    }
+    #contact a:hover {
+      color: #1a946a;
+    }
+
+    /* Responsive */
+    @media only screen and (max-width: 768px) {
+      .projects {
+        flex-direction: column;
+        align-items: center;
+      }
+      .project-card {
+        width: 90vw;
+      }
+      nav.main-nav {
+        flex-wrap: wrap;
+        gap: 17px;
+      }
+    }
+  </style>
 </head>
 <body>
   <header>
+    <img
+      src="https://avatars.githubusercontent.com/u/18448032?v=4"
+      alt="Shrividya S Photo"
+      class="profile-pic"
+    />
     <h1>Shrividya S</h1>
-    <p>Final-year B.E. Information Science | Blockchain & Full-Stack Developer</p>
-    <nav>
-      <a href="#about">About</a>
-      <a href="#projects">Projects</a>
-      <a href="#experience">Experience</a>
-      <a href="#achievements">Achievements & Certificates</a>
+    <p class="subtitle">
+      Blockchain Developer | Full-Stack Engineer | Cybersecurity Enthusiast
+    </p>
+    <nav class="main-nav" id="navbar">
+      <a href="#about" class="active">About</a>
       <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#achievements">Achievements</a>
+      <a href="#certificates">Certificates</a>
+      <a href="#testimonials">Testimonials</a>
+      <a href="#blog-preview">Blog</a>
       <a href="#contact">Contact</a>
     </nav>
+    <div class="contact-icons">
+      <a href="mailto:shrisvidya28@gmail.com" title="Email"
+        ><i class="fas fa-envelope"></i
+      ></a>
+      <a
+        href="https://www.linkedin.com/in/shrividya-s-7a5aba277"
+        target="_blank"
+        title="LinkedIn"
+        ><i class="fab fa-linkedin"></i
+      ></a>
+      <a href="https://github.com/Shrividya-hub" target="_blank" title="GitHub"
+        ><i class="fab fa-github"></i
+      ></a>
+    </div>
   </header>
+
   <section id="about">
     <h2>About Me</h2>
-    <p>Final-year B.E. student with expertise in software engineering, full-stack and blockchain development, and cybersecurity. Strong leadership, problem-solving, and public speaking skills.</p>
+    <p>
+      I am a final year Information Science student at Global Academy of Technology, Bengaluru, with a
+      passion for developing innovative blockchain applications, full-stack web projects, and exploring cybersecurity.
+      I have a strong academic record (CGPA: 9.23) and leadership experience as a regional basketball player, an NCC Cadet, and active event organizer.
+    </p>
   </section>
+
+  <section id="skills" class="skills">
+    <h2><i class="fas fa-code"></i> Skills</h2>
+    <div>
+      <span class="badge">Python</span>
+      <span class="badge">Java</span>
+      <span class="badge">C</span>
+      <span class="badge">JavaScript</span>
+      <span class="badge">React.js</span>
+      <span class="badge">Node.js</span>
+      <span class="badge">HTML</span>
+      <span class="badge">CSS</span>
+      <span class="badge">Bootstrap</span>
+      <span class="badge">Solidity</span>
+      <span class="badge">Ethereum</span>
+      <span class="badge">Web3.js</span>
+      <span class="badge">MetaMask</span>
+      <span class="badge">MySQL</span>
+      <span class="badge">MongoDB</span>
+      <span class="badge">Kali Linux</span>
+      <span class="badge">Wireshark</span>
+      <span class="badge">Git/GitHub</span>
+      <span class="badge">Power BI</span>
+      <span class="badge">Leadership</span>
+      <span class="badge">Public Speaking</span>
+    </div>
+  </section>
+
   <section id="projects">
-    <h2>Projects</h2>
-    <ul>
-      <li><strong>Blockchain-based Supply Chain dApp:</strong> NIC Internship. Built with Ethereum, Solidity, React.js, Web3.js, MetaMask.</li>
-      <li><strong>Skintel AI:</strong> AI-powered skin disease detection tool.</li>
-      <li><strong>Real-Time Video Conferencing App:</strong> Built with WebRTC, PeerJS, Socket.IO.</li>
-      <li><strong>LUMINA LED Network:</strong> Automated street lighting (Arduino, Embedded C).</li>
-      <li><strong>SAP Hackfest Project:</strong> Surplus food repurposing platform (React.js, Python, MongoDB, AI).</li>
-    </ul>
+    <h2><i class="fas fa-laptop-code"></i> Projects</h2>
+    <div class="projects">
+      <div class="project-card">
+        <img
+          src="https://user-gen-media-assets.s3.amazonaws.com/seedream_images/a800b530-32fa-460b-b5d2-d53d7e3a71a8.png"
+          alt="Blockchain Supply Chain dApp"
+        />
+        <div class="project-content">
+          <h3>Blockchain-based Supply Chain dApp</h3>
+          <div class="badge">NIC Internship</div>
+          <p>
+            Developed a decentralized supply chain system using Ethereum,
+            Solidity, React, and Web3.js. It enables auditable, tamper-proof
+            records for asset lifecycle with wallet & role-based access.
+          </p>
+          <a
+            href="https://github.com/Shrividya-hub/blockchain-supplychain"
+            target="_blank"
+            >Project Link &rarr;</a
+          >
+        </div>
+      </div>
+
+      <div class="project-card">
+        <img
+          src="https://user-gen-media-assets.s3.amazonaws.com/seedream_images/7599a4b6-5ccd-4303-a4a4-3cca78a20523.png"
+          alt="Skintel AI Disease Detector"
+        />
+        <div class="project-content">
+          <h3>Skintel AI Disease Detector</h3>
+          <div class="badge">Hackathon</div>
+          <p>
+            AI-powered diagnosis tool using computer vision to classify skin
+            diseases from images. Integrated Groqs ML model with real-time UI.
+          </p>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <img
+          src="https://user-gen-media-assets.s3.amazonaws.com/seedream_images/6023e098-c5c0-4544-9a22-4daf3a4ba27a.png"
+          alt="Real-Time Video Conferencing App"
+        />
+        <div class="project-content">
+          <h3>Real-Time Video Conferencing App</h3>
+          <p>
+            Peer-to-peer video app built with WebRTC, PeerJS, Socket.IO, and
+            Node.js for seamless live messaging and media control.
+          </p>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <img
+          src="https://user-gen-media-assets.s3.amazonaws.com/seedream_images/a800b530-32fa-460b-b5d2-d53d7e3a71a8.png"
+          alt="LUMINA: LED-based Street Lighting"
+        />
+        <div class="project-content">
+          <h3>LUMINA: LED-based Street Lighting</h3>
+          <p>
+            Smart street lighting network with sensor-based light adjustment,
+            automated via LDR and IR sensors. Embedded C and Arduino driven.
+          </p>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <img
+          src="https://user-gen-media-assets.s3.amazonaws.com/seedream_images/7599a4b6-5ccd-4303-a4a4-3cca78a20523.png"
+          alt="SAP Hackfest Food Repurpose Platform"
+        />
+        <div class="project-content">
+          <h3>SAP Hackfest Food Repurpose Platform</h3>
+          <p>
+            Sustainability platform using React, Python, MongoDB, and AI-based
+            food allocation logistics to reduce food waste.
+          </p>
+        </div>
+      </div>
+    </div>
   </section>
-  <section id="experience">
-    <h2>Experience</h2>
-    <p><strong>Blockchain Intern</strong>, National Informatics Centre, Govt. of India (June–July 2025)</p>
-    <ul>
-      <li>Developed blockchain-powered supply chain solutions with React.js frontend integration and wallet-based authentication.</li>
-    </ul>
-  </section>
+
   <section id="achievements">
-    <h2>Achievements & Certificates</h2>
-    <ul id="certificates-list">
-      <li>Regional Basketball Player</li>
-      <li>NCC Cadet B Certificate Holder</li>
-      <li>Event Host/Manager at HEduventure</li>
-      <li>Intro to HTML/CSS, Java, Cyber Security & CTF (Infosys, IISc)</li>
-      <li>Goldman Sachs, AWS, MasterCard, Power BI (Forage/Infosys)</li>
-      <li>Prompt Design in Vertex AI (Google Cloud)</li>
-    </ul>
-  </section>
-  <section id="skills">
-    <h2>Skills</h2>
+    <h2><i class="fas fa-trophy"></i> Achievements & Extracurriculars</h2>
     <ul>
-      <li>Python, Java, C, JavaScript</li>
-      <li>React.js, Node.js, HTML, CSS, Bootstrap</li>
-      <li>MySQL, MongoDB</li>
-      <li>Git, GitHub, MySQL Workbench</li>
-      <li>Solidity, Ethereum, Web3.js, MetaMask</li>
-      <li>Kali Linux, Burp Suite, Nmap, Wireshark</li>
-      <li>Pandas, NumPy, Matplotlib, Power BI</li>
-      <li>Problem Solving, Leadership, Public Speaking</li>
+      <li><i class="fas fa-basketball-ball"></i> Regional Basketball Player (Inter-district and regional)</li>
+      <li><i class="fas fa-certificate"></i> NCC Cadet (B Certificate Holder)</li>
+      <li><i class="fas fa-microphone-alt"></i> MC for NCC, Sports & College Events</li>
+      <li><i class="fas fa-users"></i> Event Host and Manager for Workshops (100+ participants)</li>
+      <li><i class="fas fa-hand-holding-heart"></i> Volunteer: Blood donation camps, environmental drives</li>
+      <li><i class="fas fa-medal"></i> Winner: College Fest Ramp Group (1st place 2024, 2nd place 2023)</li>
     </ul>
   </section>
+
+  <section id="certificates" class="certificates">
+    <h2><i class="fas fa-award"></i> Certificates</h2>
+    <ul>
+      <li><i class="fas fa-check-circle"></i> HTML & CSS, Infosys Spring Board</li>
+      <li><i class="fas fa-check-circle"></i> JAVA, Infosys Spring Board</li>
+      <li><i class="fas fa-check-circle"></i> CTF Challenge Workshop, IISC</li>
+      <li><i class="fas fa-check-circle"></i> Software Engineering Simulation, Goldman Sachs (Forage)</li>
+      <li><i class="fas fa-check-circle"></i> Solutions Architecture, AWS (Forage)</li>
+      <li><i class="fas fa-check-circle"></i> Cybersecurity Simulation, MasterCard (Forage)</li>
+      <li><i class="fas fa-check-circle"></i> Power BI, Infosys</li>
+      <li><i class="fas fa-check-circle"></i> Prompt Design, Google Cloud</li>
+    </ul>
+  </section>
+
+  <section id="testimonials">
+    <h2>Testimonials</h2>
+    <p class="testimonial">
+      "Shrividya's expertise in blockchain development and leadership made a big impact on our internship project. Always proactive and solution-oriented."
+    </p>
+    <p class="testimonial-footer">- Internship Mentor, NIC</p>
+    <p class="testimonial">
+      "An outstanding coder with a passion for innovation and keen attention to detail, Shrividya is a true asset to any team."
+    </p>
+    <p class="testimonial-footer">- Hackfest Team Lead</p>
+  </section>
+
+  <section id="blog-preview">
+    <h2>Latest Blog Posts</h2>
+
+    <article class="blog-post">
+      <h3>Introduction to Blockchain for Beginners</h3>
+      <p>
+        Blockchain technology is revolutionizing industries by enabling secure, decentralized transactions...
+      </p>
+      <a href="#">Read More →</a>
+    </article>
+
+    <article class="blog-post">
+      <h3>How to Build Decentralized Apps with Solidity</h3>
+      <p>
+        Solidity is a powerful language for writing smart contracts. Learn how to get started and deploy your first
+      smart contract on the Ethereum blockchain with practical examples.
+      </p>
+      <a href="#">Read More →</a>
+    </article>
+  </section>
+
   <section id="contact">
-    <h2>Contact</h2>
-    <ul>
-      <li>Email: shrisvidya28@gmail.com</li>
-      <li>Phone: 7204330320</li>
-      <li><a href="https://www.linkedin.com/in/shrividya-s-7a5aba277">LinkedIn</a></li>
-      <li><a href="https://github.com/Shrividya-hub">GitHub</a></li>
-    </ul>
+    <h2>Contact Me</h2>
+    <p>Feel free to reach out via any of the platforms below for project collaboration, job opportunities, or just to say hello!</p>
+    <p>
+      <a href="mailto:shrisvidya28@gmail.com"><i class="fas fa-envelope"></i> shrisvidya28@gmail.com</a><br />
+      <a href="https://www.linkedin.com/in/shrividya-s-7a5aba277" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a><br />
+      <a href="https://github.com/Shrividya-hub" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+    </p>
   </section>
-  <footer>
-    <p>&copy; 2025 Shrividya S</p>
+
+  <footer style="text-align:center; padding: 25px; background:#225beb; color:white; font-weight:600;">
+    &copy; 2025 Shrividya S. Portfolio Website.
   </footer>
-  <!-- To add anything new, just edit this HTML or load an updated JSON via JS. -->
+
+  <script>
+    // Highlight active nav link on scroll
+    const sections = document.querySelectorAll("section");
+    const navLinks = document.querySelectorAll("nav.main-nav a");
+
+    window.addEventListener("scroll", () => {
+      let current = "";
+      sections.forEach((section) => {
+        const sectionTop = section.offsetTop - 80;
+        if (pageYOffset >= sectionTop) {
+          current = section.getAttribute("id");
+        }
+      });
+
+      navLinks.forEach((link) => {
+        link.classList.remove("active");
+        if (link.getAttribute("href").includes(current)) {
+          link.classList.add("active");
+        }
+      });
+    });
+  </script>
 </body>
 </html>
