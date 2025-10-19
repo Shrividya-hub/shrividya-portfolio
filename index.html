@@ -1,21 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
-<link rel="stylesheet" href="style.css" />
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Shrividya S | Professional Portfolio</title>
+
+  <!-- External Stylesheet (optional) -->
+  <link rel="stylesheet" href="style.css" />
+
   <!-- FontAwesome for icons -->
   <link
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
   />
+
   <!-- Google Fonts -->
   <link
     href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap"
     rel="stylesheet"
   />
+
   <style>
     /* Global Styles */
     * {
@@ -44,9 +48,7 @@
       box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
       padding: 40px 30px;
     }
-    h1,
-    h2,
-    h3 {
+    h1, h2, h3 {
       font-weight: 700;
       margin-top: 0;
       margin-bottom: 15px;
@@ -63,15 +65,10 @@
 
     /* Header */
     header {
-      background: linear-gradient(
-        120deg,
-        #225beb 40%,
-        #23c686 100%
-      );
+      background: linear-gradient(120deg, #225beb 40%, #23c686 100%);
       color: white;
       text-align: center;
       padding: 65px 25px 45px;
-      position: relative;
     }
     header img.profile-pic {
       border-radius: 50%;
@@ -99,6 +96,7 @@
       gap: 28px;
       margin-top: 30px;
       font-weight: 600;
+      flex-wrap: wrap;
     }
     nav.main-nav a {
       color: white;
@@ -112,6 +110,7 @@
       color: #e0ffe3;
       border-color: #e0ffe3;
     }
+
     /* Contact icons */
     .contact-icons {
       margin-top: 30px;
@@ -208,7 +207,7 @@
       text-decoration: underline;
     }
 
-    /* Achievements section with background */
+    /* Achievements section */
     #achievements {
       background: url('https://img.freepik.com/premium-photo/basketball-hoop-basketball-middle-court_1096192-6568.jpg') no-repeat center/cover;
       color: white;
@@ -295,37 +294,6 @@
       margin-top: 8px;
     }
 
-    /* Blog preview section */
-    #blog-preview {
-      max-width: 900px;
-      margin: 50px auto 70px;
-    }
-    #blog-preview h2 {
-      border-color: #225beb;
-      margin-bottom: 30px;
-      color: #225beb;
-    }
-    .blog-post {
-      background: #f9fbff;
-      padding: 20px 25px;
-      border-radius: 12px;
-      box-shadow: 0 3px 15px rgb(0 0 0 / 0.07);
-      margin-bottom: 25px;
-      transition: box-shadow 0.3s ease;
-    }
-    .blog-post:hover {
-      box-shadow: 0 7px 26px rgb(0 0 0 / 0.12);
-    }
-    .blog-post h3 {
-      margin-top: 0;
-      color: #225beb;
-      font-size: 1.3rem;
-    }
-    .blog-post p {
-      color: #444;
-      font-size: 1rem;
-    }
-
     /* Contact Section */
     #contact {
       text-align: center;
@@ -345,6 +313,15 @@
       color: #1a946a;
     }
 
+    /* Footer */
+    footer {
+      text-align:center;
+      padding: 25px;
+      background:#225beb;
+      color:white;
+      font-weight:600;
+    }
+
     /* Responsive */
     @media only screen and (max-width: 768px) {
       .projects {
@@ -355,23 +332,18 @@
         width: 90vw;
       }
       nav.main-nav {
-        flex-wrap: wrap;
         gap: 17px;
       }
     }
   </style>
 </head>
+
 <body>
   <header>
-    <img
-      src="myphoto.jpeg"
-      alt="Shrividya S Photo"
-      class="profile-pic"
-    />
+    <img src="myphoto.jpeg" alt="Portrait of Shrividya S" class="profile-pic" />
     <h1>Shrividya S</h1>
-    <p class="subtitle">
-      Blockchain Developer | Full-Stack Engineer | Cybersecurity Enthusiast
-    </p>
+    <p class="subtitle">Blockchain Developer | Full-Stack Engineer | Cybersecurity Enthusiast</p>
+
     <nav class="main-nav" id="navbar">
       <a href="#about" class="active">About</a>
       <a href="#skills">Skills</a>
@@ -379,36 +351,28 @@
       <a href="#achievements">Achievements</a>
       <a href="#certificates">Certificates</a>
       <a href="#testimonials">Testimonials</a>
-      <a href="#blog-preview">Blog</a>
       <a href="#contact">Contact</a>
     </nav>
-    <div class="contact-icons">
-      <a href="mailto:shrisvidya28@gmail.com" title="Email"
-        ><i class="fas fa-envelope"></i
-      ></a>
-      <a
-        href="https://www.linkedin.com/in/shrividya-s-7a5aba277"
-        target="_blank"
-        title="LinkedIn"
-        ><i class="fab fa-linkedin"></i
-      ></a>
-      <a href="https://github.com/Shrividya-hub" target="_blank" title="GitHub"
-        ><i class="fab fa-github"></i
-      ></a>
+
+    <div class="contact-icons" aria-label="Contact links">
+      <a href="mailto:shrisvidya28@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
+      <a href="https://www.linkedin.com/in/shrividya-s-7a5aba277" target="_blank" rel="noopener" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+      <a href="https://github.com/Shrividya-hub" target="_blank" rel="noopener" title="GitHub"><i class="fab fa-github"></i></a>
     </div>
   </header>
 
   <section id="about">
     <h2>About Me</h2>
     <p>
-      I am a final year Information Science student at Global Academy of Technology, Bengaluru, with a
-      passion for developing innovative blockchain applications, full-stack web projects, and exploring cybersecurity.
-      I have a strong academic record (CGPA: 9.23) and leadership experience as a regional basketball player, an NCC Cadet, and active event organizer.
+      I am a final year Information Science student at Global Academy of Technology, Bengaluru,
+      with a passion for developing innovative blockchain applications, full-stack web projects,
+      and exploring cybersecurity. I have a strong academic record (CGPA: 9.23) and leadership
+      experience as a regional basketball player, an NCC Cadet, and an active event organizer.
     </p>
   </section>
 
   <section id="skills" class="skills">
-    <h2><i class="fas fa-code"></i> Skills</h2>
+    <h2><i class="fas fa-code" aria-hidden="true"></i> Skills</h2>
     <div>
       <span class="badge">Python</span>
       <span class="badge">Java</span>
@@ -435,88 +399,62 @@
   </section>
 
   <section id="projects">
-    <h2><i class="fas fa-laptop-code"></i> Projects</h2>
+    <h2><i class="fas fa-laptop-code" aria-hidden="true"></i> Projects</h2>
     <div class="projects">
       <div class="project-card">
-        <img
-          src="https://img-cdn.inc.com/image/upload/f_webp,c_fit,w_1920,q_auto/images/panoramic/getty_676338290_306191.jpg"
-          alt="Blockchain Supply Chain dApp"
-        />
+        <img src="https://img-cdn.inc.com/image/upload/f_webp,c_fit,w_1920,q_auto/images/panoramic/getty_676338290_306191.jpg" alt="Blockchain Supply Chain dApp" />
         <div class="project-content">
           <h3>Blockchain-based Supply Chain dApp</h3>
           <div class="badge">NIC Internship</div>
           <p>
-            Developed a decentralized supply chain system using Ethereum,
-            Solidity, React, and Web3.js. It enables auditable, tamper-proof
-            records for asset lifecycle with wallet & role-based access.
+            Developed a decentralized supply chain system using Ethereum, Solidity, React, and Web3.js.
+            It enables auditable, tamper-proof records for asset lifecycle with wallet & role-based access.
           </p>
-          <a
-            href="https://github.com/Shrividya-hub/Blockchain-application-on-supplychain-system"
-            target="_blank"
-            >Project Link &rarr;</a
-          >
+          <a href="https://github.com/Shrividya-hub/Blockchain-application-on-supplychain-system" target="_blank" rel="noopener">Project Link →</a>
         </div>
       </div>
 
       <div class="project-card">
-        <img
-          src="https://ebv2e3r5onu.exactdn.com/wp-content/uploads/2022/07/shutterstock_1274873035-scaled.jpg?strip=all&lossy=1&ssl=1"
-          alt="Skintel AI Disease Detector"
-        />
+        <img src="https://ebv2e3r5onu.exactdn.com/wp-content/uploads/2022/07/shutterstock_1274873035-scaled.jpg?strip=all&lossy=1&ssl=1" alt="Skintel AI Disease Detector" />
         <div class="project-content">
           <h3>Skintel AI Disease Detector</h3>
           <div class="badge">Colossus Hackathon</div>
           <p>
-            AI-powered diagnosis tool using computer vision to classify skin
-            diseases from images. Integrated Groqs ML model with real-time UI.
+            AI-powered diagnosis tool using computer vision to classify skin diseases from images.
+            Integrated Groqs ML model with real-time UI.
           </p>
-          <a
-            href="https://github.com/Shrividya-hub/Skintel_AI"
-            target="_blank"
-            >Project Link &rarr;</a>
+          <a href="https://github.com/Shrividya-hub/Skintel_AI" target="_blank" rel="noopener">Project Link →</a>
         </div>
       </div>
 
-      <!-- <div class="project-card">
-        <img
-          src="https://user-gen-media-assets.s3.amazonaws.com/seedream_images/6023e098-c5c0-4544-9a22-4daf3a4ba27a.png"
-          alt="Real-Time Video Conferencing App"
-        />
+      <div class="project-card">
+        <img src="https://user-gen-media-assets.s3.amazonaws.com/seedream_images/6023e098-c5c0-4544-9a22-4daf3a4ba27a.png" alt="Real-Time Video Conferencing App" />
         <div class="project-content">
           <h3>Real-Time Video Conferencing App</h3>
           <p>
-            Peer-to-peer video app built with WebRTC, PeerJS, Socket.IO, and
-            Node.js for seamless live messaging and media control.
+            Peer-to-peer video app built with WebRTC, PeerJS, Socket.IO, and Node.js for seamless live messaging and media control.
           </p>
         </div>
-      </div> -->
+      </div>
 
       <div class="project-card">
-        <img
-          src="https://www.treehugger.com/thmb/jVi03pwG3id7lO7ASAOTTR56JKw=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/GettyImages-556592235-2637cd662c944f99922063e82da790e3.jpg"
-          alt="LUMINA: LED-based Street Lighting"
-        />
+        <img src="https://www.treehugger.com/thmb/jVi03pwG3id7lO7ASAOTTR56JKw=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/GettyImages-556592235-2637cd662c944f99922063e82da790e3.jpg" alt="LUMINA: LED-based Street Lighting" />
         <div class="project-content">
           <h3>LUMINA: LED-based Street Lighting</h3>
           <div class="badge">Mini Project</div>
           <p>
-            Smart street lighting network with sensor-based light adjustment,
-            automated via LDR and IR sensors. Embedded C and Arduino driven.
+            Smart street lighting network with sensor-based light adjustment, automated via LDR and IR sensors. Embedded C and Arduino driven.
           </p>
         </div>
       </div>
 
       <div class="project-card">
-        <img
-          src="https://info.ehl.edu/hubfs/Blog-EHL-Insights/Blog-Header-EHL-Insights/AdobeStock_264542845.jpeg"
-          alt="SAP Hackfest Food Repurpose Platform"
-        />
+        <img src="https://info.ehl.edu/hubfs/Blog-EHL-Insights/Blog-Header-EHL-Insights/AdobeStock_264542845.jpeg" alt="SAP Hackfest Food Repurpose Platform" />
         <div class="project-content">
           <h3>SAP Hackfest Food Repurpose Platform</h3>
           <div class="badge">SAP Hackfest 2025</div>
           <p>
-            Sustainability platform using React, Python, MongoDB, and AI-based
-            food allocation logistics to reduce food waste.
+            Sustainability platform using React, Python, MongoDB, and AI-based food allocation logistics to reduce food waste.
           </p>
         </div>
       </div>
@@ -524,29 +462,29 @@
   </section>
 
   <section id="achievements">
-    <h2><i class="fas fa-trophy"></i> Achievements & Extracurriculars</h2>
+    <h2><i class="fas fa-trophy" aria-hidden="true"></i> Achievements & Extracurriculars</h2>
     <ul>
-      <li><i class="fas fa-basketball-ball"></i> Regional Basketball Player (Inter-district and regional)</li>
-      <li><i class="fas fa-certificate"></i> NCC Cadet (B Certificate Holder)</li>
-      <li><i class="fas fa-microphone-alt"></i> MC for NCC, Sports & College Events</li>
-      <li><i class="fas fa-users"></i> Event Host and Manager for Workshops at 
-        <a href="https://heduventure.com/">HEduventure &rarr; </a> (100+ participants)</li>
-      <li><i class="fas fa-hand-holding-heart"></i> Volunteer: Blood donation camps, environmental drives</li>
-      <li><i class="fas fa-medal"></i> Winner: College Fest Ramp Group (1st place 2024, 2nd place 2023)</li>
+      <li><i class="fas fa-basketball-ball" aria-hidden="true"></i> Regional Basketball Player (Inter-district and regional)</li>
+      <li><i class="fas fa-certificate" aria-hidden="true"></i> NCC Cadet (B Certificate Holder)</li>
+      <li><i class="fas fa-microphone-alt" aria-hidden="true"></i> MC for NCC, Sports & College Events</li>
+      <li><i class="fas fa-users" aria-hidden="true"></i> Event Host and Manager for Workshops at 
+        <a href="https://heduventure.com/" target="_blank" rel="noopener">HEduventure →</a> (100+ participants)</li>
+      <li><i class="fas fa-hand-holding-heart" aria-hidden="true"></i> Volunteer: Blood donation camps, environmental drives</li>
+      <li><i class="fas fa-medal" aria-hidden="true"></i> Winner: College Fest Ramp Group (1st place 2024, 2nd place 2023)</li>
     </ul>
   </section>
 
   <section id="certificates" class="certificates">
-    <h2><i class="fas fa-award"></i> Certificates</h2>
+    <h2><i class="fas fa-award" aria-hidden="true"></i> Certificates</h2>
     <ul>
-      <li><i class="fas fa-check-circle"></i> HTML & CSS, Infosys Spring Board</li>
-      <li><i class="fas fa-check-circle"></i> JAVA, Infosys Spring Board</li>
-      <li><i class="fas fa-check-circle"></i> CTF Challenge Workshop, IISC</li>
-      <li><i class="fas fa-check-circle"></i> Software Engineering Simulation, Goldman Sachs (Forage)</li>
-      <li><i class="fas fa-check-circle"></i> Solutions Architecture, AWS (Forage)</li>
-      <li><i class="fas fa-check-circle"></i> Cybersecurity Simulation, MasterCard (Forage)</li>
-      <li><i class="fas fa-check-circle"></i> Power BI, Infosys Spring Board</li>
-      <li><i class="fas fa-check-circle"></i> Prompt Design, Google Cloud</li>
+      <li><i class="fas fa-check-circle" aria-hidden="true"></i> HTML & CSS, Infosys Spring Board</li>
+      <li><i class="fas fa-check-circle" aria-hidden="true"></i> JAVA, Infosys Spring Board</li>
+      <li><i class="fas fa-check-circle" aria-hidden="true"></i> CTF Challenge Workshop, IISC</li>
+      <li><i class="fas fa-check-circle" aria-hidden="true"></i> Software Engineering Simulation, Goldman Sachs (Forage)</li>
+      <li><i class="fas fa-check-circle" aria-hidden="true"></i> Solutions Architecture, AWS (Forage)</li>
+      <li><i class="fas fa-check-circle" aria-hidden="true"></i> Cybersecurity Simulation, MasterCard (Forage)</li>
+      <li><i class="fas fa-check-circle" aria-hidden="true"></i> Power BI, Infosys Spring Board</li>
+      <li><i class="fas fa-check-circle" aria-hidden="true"></i> Prompt Design, Google Cloud</li>
     </ul>
   </section>
 
@@ -562,38 +500,17 @@
     <p class="testimonial-footer">- Hackfest Team Lead</p>
   </section>
 
-  <section id="blog-preview">
-    <h2>Latest Blog Posts</h2>
-
-    <article class="blog-post">
-      <h3>Introduction to Blockchain for Beginners</h3>
-      <p>
-        Blockchain technology is revolutionizing industries by enabling secure, decentralized transactions...
-      </p>
-      <a href="#">Read More →</a>
-    </article>
-
-    <article class="blog-post">
-      <h3>How to Build Decentralized Apps with Solidity</h3>
-      <p>
-        Solidity is a powerful language for writing smart contracts. Learn how to get started and deploy your first
-      smart contract on the Ethereum blockchain with practical examples.
-      </p>
-      <a href="#">Read More →</a>
-    </article>
-  </section>
-
   <section id="contact">
     <h2>Contact Me</h2>
     <p>Feel free to reach out via any of the platforms below for project collaboration, job opportunities, or just to say hello!</p>
     <p>
-      <a href="mailto:shrisvidya28@gmail.com"><i class="fas fa-envelope"></i> shrisvidya28@gmail.com</a><br />
-      <a href="https://www.linkedin.com/in/shrividya-s-7a5aba277" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a><br />
-      <a href="https://github.com/Shrividya-hub" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+      <a href="mailto:shrisvidya28@gmail.com"><i class="fas fa-envelope" aria-hidden="true"></i> shrisvidya28@gmail.com</a><br />
+      <a href="https://www.linkedin.com/in/shrividya-s-7a5aba277" target="_blank" rel="noopener"><i class="fab fa-linkedin" aria-hidden="true"></i> LinkedIn</a><br />
+      <a href="https://github.com/Shrividya-hub" target="_blank" rel="noopener"><i class="fab fa-github" aria-hidden="true"></i> GitHub</a>
     </p>
   </section>
 
-  <footer style="text-align:center; padding: 25px; background:#225beb; color:white; font-weight:600;">
+  <footer>
     &copy; 2025 Shrividya S. Portfolio Website.
   </footer>
 
@@ -602,11 +519,11 @@
     const sections = document.querySelectorAll("section");
     const navLinks = document.querySelectorAll("nav.main-nav a");
 
-    window.addEventListener("scroll", () => {
+    function updateActiveLink() {
       let current = "";
       sections.forEach((section) => {
-        const sectionTop = section.offsetTop - 80;
-        if (pageYOffset >= sectionTop) {
+        const sectionTop = section.offsetTop - 90; // offset to trigger earlier
+        if (window.pageYOffset >= sectionTop) {
           current = section.getAttribute("id");
         }
       });
@@ -617,7 +534,25 @@
           link.classList.add("active");
         }
       });
+    }
+
+    window.addEventListener("scroll", updateActiveLink);
+    window.addEventListener("resize", updateActiveLink);
+    document.addEventListener("DOMContentLoaded", updateActiveLink);
+
+    // Smooth scrolling for anchor links (modern browsers)
+    document.querySelectorAll('nav.main-nav a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          // Update active manually after click
+          setTimeout(updateActiveLink, 300);
+        }
+      });
     });
   </script>
 </body>
 </html>
+
