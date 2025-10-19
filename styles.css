@@ -25,9 +25,7 @@ section {
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
   padding: 40px 30px;
 }
-h1,
-h2,
-h3 {
+h1, h2, h3 {
   font-weight: 700;
   margin-top: 0;
   margin-bottom: 15px;
@@ -44,15 +42,10 @@ p {
 
 /* Header */
 header {
-  background: linear-gradient(
-    120deg,
-    #225beb 40%,
-    #23c686 100%
-  );
+  background: linear-gradient(120deg, #225beb 40%, #23c686 100%);
   color: white;
   text-align: center;
   padding: 65px 25px 45px;
-  position: relative;
 }
 header img.profile-pic {
   border-radius: 50%;
@@ -80,6 +73,7 @@ nav.main-nav {
   gap: 28px;
   margin-top: 30px;
   font-weight: 600;
+  flex-wrap: wrap;
 }
 nav.main-nav a {
   color: white;
@@ -93,6 +87,7 @@ nav.main-nav a.active {
   color: #e0ffe3;
   border-color: #e0ffe3;
 }
+
 /* Contact icons */
 .contact-icons {
   margin-top: 30px;
@@ -189,7 +184,7 @@ nav.main-nav a.active {
   text-decoration: underline;
 }
 
-/* Achievements section with background */
+/* Achievements section */
 #achievements {
   background: url('https://img.freepik.com/premium-photo/basketball-hoop-basketball-middle-court_1096192-6568.jpg') no-repeat center/cover;
   color: white;
@@ -276,37 +271,6 @@ nav.main-nav a.active {
   margin-top: 8px;
 }
 
-/* Blog preview section */
-#blog-preview {
-  max-width: 900px;
-  margin: 50px auto 70px;
-}
-#blog-preview h2 {
-  border-color: #225beb;
-  margin-bottom: 30px;
-  color: #225beb;
-}
-.blog-post {
-  background: #f9fbff;
-  padding: 20px 25px;
-  border-radius: 12px;
-  box-shadow: 0 3px 15px rgb(0 0 0 / 0.07);
-  margin-bottom: 25px;
-  transition: box-shadow 0.3s ease;
-}
-.blog-post:hover {
-  box-shadow: 0 7px 26px rgb(0 0 0 / 0.12);
-}
-.blog-post h3 {
-  margin-top: 0;
-  color: #225beb;
-  font-size: 1.3rem;
-}
-.blog-post p {
-  color: #444;
-  font-size: 1rem;
-}
-
 /* Contact Section */
 #contact {
   text-align: center;
@@ -326,6 +290,15 @@ nav.main-nav a.active {
   color: #1a946a;
 }
 
+/* Footer */
+footer {
+  text-align:center;
+  padding: 25px;
+  background:#225beb;
+  color:white;
+  font-weight:600;
+}
+
 /* Responsive */
 @media only screen and (max-width: 768px) {
   .projects {
@@ -336,7 +309,6 @@ nav.main-nav a.active {
     width: 90vw;
   }
   nav.main-nav {
-    flex-wrap: wrap;
     gap: 17px;
   }
 }
